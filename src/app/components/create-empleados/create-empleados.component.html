@@ -1,0 +1,30 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text text-center">
+                <div class="card-body">
+                    <h3>{{ titulo }}</h3>
+                    <div *ngIf="loading" class="spinner-border float-right" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <span *ngIf="submitted && createEmpleado.invalid" style="background-color: red;" class="badge badge-danger">Todos los campos son obligatorios</span>
+                    <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="agregarEmpleado()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="apellido" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg mt-3 " formControlName="numeroColaborador" placeholder="Numero de colaborador">
+                        <input type="text" class="form-control form-control-lg mt-3 " formControlName="correo" placeholder="Correo">
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Lista de productos</span>
+            <table *ngIf="empleados.length > 0" class="table table-striped mt-5">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Numero colaborador</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <td>{{empleado.nombre}}</td>
+                        <td>{{empleado.apellido}}</td>
+                        <td>{{empleado.numeroColaborador}}</td>
+                        <td>{{empleado.correo}}</td>
+                        <td><i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/edit-empleado/', empleado.id]"></i>
+                            <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

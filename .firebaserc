@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "databasethereef": {
+      "hosting": {
+        "TheReefColaboradores": [
+          "databasethereef"
+        ]
+      }
+    }
+  }
+}
